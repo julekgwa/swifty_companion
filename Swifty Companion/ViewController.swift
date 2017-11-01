@@ -13,6 +13,7 @@ import SVProgressHUD
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchTextField: UITextField!
     // app constant 
     let CLIENT_ID = "8383f6623925fb65ea043331f7da34028a8a4261e5218f5fe5ba7d5d0397fb54"
     let CLIENT_SECRET = "743967a026896fbee7a2b6c60851e6e597e2e06e5ee60048607a5727d25068ad"
@@ -50,5 +51,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func showDetailsBtn(_ sender: Any) {
+        performSegue(withIdentifier: "showDetails", sender: self)
+    }
 }
 
