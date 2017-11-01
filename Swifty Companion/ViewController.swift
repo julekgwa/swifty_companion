@@ -54,5 +54,14 @@ class ViewController: UIViewController {
     @IBAction func showDetailsBtn(_ sender: Any) {
         performSegue(withIdentifier: "showDetails", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let secondVC = segue.destination as! SecondViewController
+            
+            secondVC.data = searchTextField.text!
+            
+        }
+    }
 }
 
