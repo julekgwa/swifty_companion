@@ -9,5 +9,7 @@ target 'Swifty Companion' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'GradientProgressBar', '~> 1.0'
+  pod 'SDWebImage', '~> 4.0'
 
 end

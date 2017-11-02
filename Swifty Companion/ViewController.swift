@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     // outlets
     @IBOutlet weak var searchTextField: UITextField!
-    
+    @IBOutlet weak var searchView: UIView!
     
     // app constant 
     let CLIENT_ID = "8383f6623925fb65ea043331f7da34028a8a4261e5218f5fe5ba7d5d0397fb54"
@@ -51,6 +51,7 @@ class ViewController: UIViewController {
             }
             // dismiss progress HUD
             SVProgressHUD.dismiss()
+            self.searchView.isHidden = false
         }
     }
     
