@@ -13,7 +13,10 @@ import SVProgressHUD
 
 class ViewController: UIViewController {
 
+    // outlets
     @IBOutlet weak var searchTextField: UITextField!
+    
+    
     // app constant 
     let CLIENT_ID = "8383f6623925fb65ea043331f7da34028a8a4261e5218f5fe5ba7d5d0397fb54"
     let CLIENT_SECRET = "743967a026896fbee7a2b6c60851e6e597e2e06e5ee60048607a5727d25068ad"
@@ -22,6 +25,7 @@ class ViewController: UIViewController {
     
     // access token
     var access_token = ""
+    let student = Student()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +53,128 @@ class ViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+    
+    func isValid(str: String) -> Bool {
+        if str.characters.count > 0 {
+            return true
+        }
+        return false
+    }
 
 
     @IBAction func showDetailsBtn(_ sender: Any) {
-        performSegue(withIdentifier: "showDetails", sender: self)
+//        performSegue(withIdentifier: "showDetails", sender: self)
+        SVProgressHUD.show()
+        guard let login = searchTextField.text, isValid(str: login) else {
+            SVProgressHUD.dismiss()
+            SVProgressHUD.showError(withStatus: "Textfield is empty")
+            return }
+        let parameters: Parameters = ["access_token": access_token]
+        Alamofire.request("\(API_URL)users/\(login)", method: .get, parameters: parameters).responseJSON { response in
+            
+            if ((response.result.value) != nil) {
+                
+                let swifty = JSON(response.result.value!)
+                guard swifty.count != 0 else {
+                    SVProgressHUD.showError(withStatus: "Unable to find login")
+                    return
+                }
+                
+                if let resData = swifty["projects_users"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setProjectsUsers(data: data)
+                }
+                
+                if let resData = swifty["campus_users"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setCampusUsers(data: data)
+                }
+                
+                if let resData = swifty["languages_users"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setLanguagesUsers(data: data)
+                }
+                
+                if let resData = swifty["expertises_users"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setExpertisesUsers(data: data)
+                }
+                
+                if let resData = swifty["cursus_users"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setCursusUsers(data: data)
+                }
+                
+                if let resData = swifty["campus"].arrayObject {
+                    let data = resData as! [[String: AnyObject]]
+                    self.student.setCampus(data: data)
+                }
+                
+                if let resData = swifty["correction_point"].int {
+                    self.student.correction_point = resData
+                }
+                
+                if let resData = swifty["pool_month"].string {
+                    self.student.pool_month = resData
+                }
+                
+                if let resData = swifty["displayname"].string {
+                    self.student.displayname = resData
+                }
+                
+                if let resData = swifty["last_name"].string {
+                    self.student.last_name = resData
+                }
+                
+                if let resData = swifty["image_url"].string {
+                    self.student.image_url = resData
+                }
+                
+                if let resData = swifty["url"].string {
+                    self.student.url = resData
+                }
+                
+                if let resData = swifty["email"].string {
+                    self.student.email = resData
+                }
+                
+                if let resData = swifty["pool_year"].string {
+                    self.student.pool_year = resData
+                }
+                
+                if let resData = swifty["wallet"].int {
+                    self.student.wallet = resData
+                }
+                
+                if let resData = swifty["login"].string {
+                    self.student.login = resData
+                }
+                
+                if let resData = swifty["staff?"].bool {
+                    self.student.staff = resData
+                }
+                
+                if let resData = swifty["first_name"].string {
+                    self.student.first_name = resData
+                }
+                
+                SVProgressHUD.dismiss()
+                self.searchTextField.text = ""
+                self.performSegue(withIdentifier: "showDetails", sender: self)
+//                print(self.student.description())
+            }else {
+                print("ERROR")
+            }
+            
+        }
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             let secondVC = segue.destination as! SecondViewController
             
-            secondVC.data = searchTextField.text!
+            secondVC.studentInfo = student
             
         }
     }

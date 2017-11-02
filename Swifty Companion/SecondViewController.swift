@@ -11,13 +11,16 @@ import UIKit
 class SecondViewController: UIViewController {
 
     // remove me
-    var data = ""
+    var studentInfo = Student()
+    var studentArray = Array<Student>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(data)
+        studentArray = Array<Student>()
+        studentArray.append(studentInfo)
+        print(studentArray.count)
     }
 
     override func didReceiveMemoryWarning() {

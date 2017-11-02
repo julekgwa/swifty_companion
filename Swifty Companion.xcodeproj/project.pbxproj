@@ -104,7 +104,6 @@
 				8C7F7BCF1FA8F23900A423B7 /* Assets.xcassets */,
 				8C7F7BDA1FA90E6900A423B7 /* icon.png */,
 				8C7F7BD41FA8F23900A423B7 /* Info.plist */,
-				8CCC18081FA9868800DA0F5B /* SecondViewController.swift */,
 			);
 			path = "Swifty Companion";
 			sourceTree = "<group>";
@@ -112,6 +111,7 @@
 		8CCBE0141FAAA76900DC3490 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8CCC18081FA9868800DA0F5B /* SecondViewController.swift */,
 				8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */,
 				8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */,
 			);
