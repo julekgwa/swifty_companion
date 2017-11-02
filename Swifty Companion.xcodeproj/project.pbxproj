@@ -14,6 +14,18 @@
 		8C7F7BD01FA8F23900A423B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BCF1FA8F23900A423B7 /* Assets.xcassets */; };
 		8C7F7BD31FA8F23900A423B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BD11FA8F23900A423B7 /* LaunchScreen.storyboard */; };
 		8C7F7BDB1FA90E6900A423B7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BDA1FA90E6900A423B7 /* icon.png */; };
+		8CCBE0181FAAA82800DC3490 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0171FAAA82800DC3490 /* Student.swift */; };
+		8CCBE01C1FAAA8A200DC3490 /* LanguagesUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE01B1FAAA8A200DC3490 /* LanguagesUser.swift */; };
+		8CCBE01E1FAAA8C900DC3490 /* ProjectsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE01D1FAAA8C900DC3490 /* ProjectsUser.swift */; };
+		8CCBE0201FAAA8F000DC3490 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE01F1FAAA8F000DC3490 /* Project.swift */; };
+		8CCBE0221FAAA91300DC3490 /* ExpertisesUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0211FAAA91300DC3490 /* ExpertisesUser.swift */; };
+		8CCBE0241FAAA93C00DC3490 /* CursusUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0231FAAA93C00DC3490 /* CursusUser.swift */; };
+		8CCBE0261FAAA95A00DC3490 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0251FAAA95A00DC3490 /* Skills.swift */; };
+		8CCBE02E1FAAA9E900DC3490 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE02D1FAAA9E900DC3490 /* Language.swift */; };
+		8CCBE0301FAAAB8000DC3490 /* CampusUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE02F1FAAAB8000DC3490 /* CampusUser.swift */; };
+		8CCBE0321FAAABE200DC3490 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0311FAAABE200DC3490 /* Campus.swift */; };
+		8CCBE0341FAAAC3200DC3490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0331FAAAC3200DC3490 /* User.swift */; };
+		8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0351FAAAC6600DC3490 /* Cursus.swift */; };
 		8CCC18091FA9868800DA0F5B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC18081FA9868800DA0F5B /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +40,18 @@
 		8C7F7BD21FA8F23900A423B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7F7BD41FA8F23900A423B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C7F7BDA1FA90E6900A423B7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		8CCBE0171FAAA82800DC3490 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		8CCBE01B1FAAA8A200DC3490 /* LanguagesUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesUser.swift; sourceTree = "<group>"; };
+		8CCBE01D1FAAA8C900DC3490 /* ProjectsUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsUser.swift; sourceTree = "<group>"; };
+		8CCBE01F1FAAA8F000DC3490 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		8CCBE0211FAAA91300DC3490 /* ExpertisesUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertisesUser.swift; sourceTree = "<group>"; };
+		8CCBE0231FAAA93C00DC3490 /* CursusUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursusUser.swift; sourceTree = "<group>"; };
+		8CCBE0251FAAA95A00DC3490 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
+		8CCBE02D1FAAA9E900DC3490 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		8CCBE02F1FAAAB8000DC3490 /* CampusUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusUser.swift; sourceTree = "<group>"; };
+		8CCBE0311FAAABE200DC3490 /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		8CCBE0331FAAAC3200DC3490 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8CCBE0351FAAAC6600DC3490 /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		8CCC18081FA9868800DA0F5B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D037115EB057F9DDA8D361F8 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,16 +98,52 @@
 		8C7F7BC71FA8F23800A423B7 /* Swifty Companion */ = {
 			isa = PBXGroup;
 			children = (
-				8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */,
-				8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */,
-				8C7F7BCC1FA8F23900A423B7 /* Main.storyboard */,
+				8CCBE0161FAAA7DA00DC3490 /* Model */,
+				8CCBE0141FAAA76900DC3490 /* Controller */,
+				8CCBE0151FAAA7CA00DC3490 /* View */,
 				8C7F7BCF1FA8F23900A423B7 /* Assets.xcassets */,
-				8C7F7BD11FA8F23900A423B7 /* LaunchScreen.storyboard */,
 				8C7F7BDA1FA90E6900A423B7 /* icon.png */,
 				8C7F7BD41FA8F23900A423B7 /* Info.plist */,
 				8CCC18081FA9868800DA0F5B /* SecondViewController.swift */,
 			);
 			path = "Swifty Companion";
+			sourceTree = "<group>";
+		};
+		8CCBE0141FAAA76900DC3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */,
+				8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8CCBE0151FAAA7CA00DC3490 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C7F7BCC1FA8F23900A423B7 /* Main.storyboard */,
+				8C7F7BD11FA8F23900A423B7 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8CCBE0161FAAA7DA00DC3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CCBE0171FAAA82800DC3490 /* Student.swift */,
+				8CCBE01B1FAAA8A200DC3490 /* LanguagesUser.swift */,
+				8CCBE01D1FAAA8C900DC3490 /* ProjectsUser.swift */,
+				8CCBE01F1FAAA8F000DC3490 /* Project.swift */,
+				8CCBE0211FAAA91300DC3490 /* ExpertisesUser.swift */,
+				8CCBE0231FAAA93C00DC3490 /* CursusUser.swift */,
+				8CCBE0251FAAA95A00DC3490 /* Skills.swift */,
+				8CCBE02D1FAAA9E900DC3490 /* Language.swift */,
+				8CCBE02F1FAAAB8000DC3490 /* CampusUser.swift */,
+				8CCBE0311FAAABE200DC3490 /* Campus.swift */,
+				8CCBE0331FAAAC3200DC3490 /* User.swift */,
+				8CCBE0351FAAAC6600DC3490 /* Cursus.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D78A4061CAE5B60359967338 /* Frameworks */ = {
@@ -228,9 +288,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCBE01E1FAAA8C900DC3490 /* ProjectsUser.swift in Sources */,
+				8CCBE0241FAAA93C00DC3490 /* CursusUser.swift in Sources */,
+				8CCBE0321FAAABE200DC3490 /* Campus.swift in Sources */,
+				8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */,
+				8CCBE01C1FAAA8A200DC3490 /* LanguagesUser.swift in Sources */,
 				8CCC18091FA9868800DA0F5B /* SecondViewController.swift in Sources */,
+				8CCBE0301FAAAB8000DC3490 /* CampusUser.swift in Sources */,
+				8CCBE0341FAAAC3200DC3490 /* User.swift in Sources */,
 				8C7F7BCB1FA8F23800A423B7 /* ViewController.swift in Sources */,
+				8CCBE02E1FAAA9E900DC3490 /* Language.swift in Sources */,
+				8CCBE0221FAAA91300DC3490 /* ExpertisesUser.swift in Sources */,
+				8CCBE0261FAAA95A00DC3490 /* Skills.swift in Sources */,
 				8C7F7BC91FA8F23800A423B7 /* AppDelegate.swift in Sources */,
+				8CCBE0181FAAA82800DC3490 /* Student.swift in Sources */,
+				8CCBE0201FAAA8F000DC3490 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

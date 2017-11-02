@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SC-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -63,7 +63,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W3v-Ib-u3p" secondAttribute="bottom" id="m4F-Ae-yBP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SC" id="thp-Hr-VxB"/>
+                    <navigationItem key="navigationItem" title="Swifty Companion" id="thp-Hr-VxB">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="N3K-M7-mwT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="xuH-87-VA0" id="PkI-vA-7Nc"/>
                         <segue destination="NBb-Ux-Zqg" kind="show" identifier="showDetails" id="o7w-eF-nze"/>
