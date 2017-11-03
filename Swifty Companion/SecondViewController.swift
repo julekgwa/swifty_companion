@@ -8,9 +8,10 @@
 
 import UIKit
 import SDWebImage
+import ChameleonFramework
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     // remove me
     var studentInfo = Student()
     var studentArray = Array<Student>()
@@ -19,15 +20,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-//      var iter = 0
-//        while iter < studentInfo.studentSkills.count {
-//            print(studentInfo.studentSkills[iter].description())
-//            iter = iter + 1
-//        }
+        //      var iter = 0
+        //        while iter < studentInfo.studentSkills.count {
+        //            print(studentInfo.studentSkills[iter].description())
+        //            iter = iter + 1
+        //        }
         studentArray.removeAll()
         studentArray.append(studentInfo)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,29 +61,52 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return studentArray[0].cursus_users[0].skills.count
+        if collectionView.tag == 1 {
+            return studentArray[0].cursus_users[0].skills.count
+        }
+        return studentArray[0].projects_users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let view = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath) as! SkillsCollectionViewCell
         
-        view.skillName.text = studentArray[0].cursus_users[0].skills[indexPath.row].name
-        view.skillLevel.text = String(studentArray[0].cursus_users[0].skills[indexPath.row].level)
+        if collectionView.tag == 1 {
+            let view = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath) as! SkillsCollectionViewCell
+            
+            view.skillName.text = studentArray[0].cursus_users[0].skills[indexPath.row].name
+            view.skillLevel.text = String(studentArray[0].cursus_users[0].skills[indexPath.row].level)
+            let level : Double = studentArray[0].cursus_users[0].skills[indexPath.row].level
+            view.skillProgress.setProgress(0.0, animated: true)
+            let percentage = level.truncatingRemainder(dividingBy: 1)
+            view.skillProgress.setProgress(Float(percentage), animated: true)
+            view.skillProgress.progress = Float(percentage)
+            return view
+        }
+        
+        let view = collectionView.dequeueReusableCell(withReuseIdentifier: "projects", for: indexPath) as! ProjectsCollectionViewCell
+        
+        let project = studentArray[0].projects_users[indexPath.row]
+        view.projectName.text = project.project?.name
+        view.marks.text = String("\(project.final_mark)%")
+        if project.validated == true {
+            view.marks.textColor = UIColor.flatGreen()
+        }else {
+             view.marks.textColor = UIColor.flatRed()
+        }
+        
         return view
     }
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

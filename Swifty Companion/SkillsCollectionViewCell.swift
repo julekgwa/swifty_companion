@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import GradientProgressBar
 
 class SkillsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var skillName: UILabel!
-    @IBOutlet weak var skillProgress: UIProgressView!
+    @IBOutlet weak var skillProgress: GradientProgressBar!
     @IBOutlet weak var skillLevel: UILabel!
 }
