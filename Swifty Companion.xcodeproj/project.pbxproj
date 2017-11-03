@@ -14,6 +14,7 @@
 		8C7F7BD01FA8F23900A423B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BCF1FA8F23900A423B7 /* Assets.xcassets */; };
 		8C7F7BD31FA8F23900A423B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BD11FA8F23900A423B7 /* LaunchScreen.storyboard */; };
 		8C7F7BDB1FA90E6900A423B7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BDA1FA90E6900A423B7 /* icon.png */; };
+		8CB1D6921FACCB1B00EFCAA1 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1D6911FACCB1B00EFCAA1 /* ProjectsCollectionViewCell.swift */; };
 		8CCBE0181FAAA82800DC3490 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0171FAAA82800DC3490 /* Student.swift */; };
 		8CCBE01C1FAAA8A200DC3490 /* LanguagesUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE01B1FAAA8A200DC3490 /* LanguagesUser.swift */; };
 		8CCBE01E1FAAA8C900DC3490 /* ProjectsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE01D1FAAA8C900DC3490 /* ProjectsUser.swift */; };
@@ -28,6 +29,7 @@
 		8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0351FAAAC6600DC3490 /* Cursus.swift */; };
 		8CCBE0391FAAC1B700DC3490 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0381FAAC1B700DC3490 /* MyTableViewCell.swift */; };
 		8CCC18091FA9868800DA0F5B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC18081FA9868800DA0F5B /* SecondViewController.swift */; };
+		8CEE0CB31FAC085D00399528 /* SkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE0CB21FAC085D00399528 /* SkillsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		8C7F7BD21FA8F23900A423B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7F7BD41FA8F23900A423B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C7F7BDA1FA90E6900A423B7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		8CB1D6911FACCB1B00EFCAA1 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CCBE0171FAAA82800DC3490 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		8CCBE01B1FAAA8A200DC3490 /* LanguagesUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesUser.swift; sourceTree = "<group>"; };
 		8CCBE01D1FAAA8C900DC3490 /* ProjectsUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsUser.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		8CCBE0351FAAAC6600DC3490 /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		8CCBE0381FAAC1B700DC3490 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		8CCC18081FA9868800DA0F5B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8CEE0CB21FAC085D00399528 /* SkillsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D037115EB057F9DDA8D361F8 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				8CCBE0381FAAC1B700DC3490 /* MyTableViewCell.swift */,
+				8CEE0CB21FAC085D00399528 /* SkillsCollectionViewCell.swift */,
+				8CB1D6911FACCB1B00EFCAA1 /* ProjectsCollectionViewCell.swift */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GradientProgressBar/GradientProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -268,6 +275,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -305,6 +313,7 @@
 			files = (
 				8CCBE01E1FAAA8C900DC3490 /* ProjectsUser.swift in Sources */,
 				8CCBE0241FAAA93C00DC3490 /* CursusUser.swift in Sources */,
+				8CB1D6921FACCB1B00EFCAA1 /* ProjectsCollectionViewCell.swift in Sources */,
 				8CCBE0321FAAABE200DC3490 /* Campus.swift in Sources */,
 				8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */,
 				8CCBE01C1FAAA8A200DC3490 /* LanguagesUser.swift in Sources */,
@@ -319,6 +328,7 @@
 				8C7F7BC91FA8F23800A423B7 /* AppDelegate.swift in Sources */,
 				8CCBE0181FAAA82800DC3490 /* Student.swift in Sources */,
 				8CCBE0201FAAA8F000DC3490 /* Project.swift in Sources */,
+				8CEE0CB31FAC085D00399528 /* SkillsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

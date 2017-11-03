@@ -11,5 +11,6 @@ target 'Swifty Companion' do
   pod 'SVProgressHUD'
   pod 'GradientProgressBar', '~> 1.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'ChameleonFramework'
 
 end

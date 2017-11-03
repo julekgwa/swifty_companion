@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     // access token
     var access_token = ""
-    let student = Student()
+    var studentInfo = Student()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         Alamofire.request("\(API_URL)users/\(login)", method: .get, parameters: parameters).responseJSON { response in
             
             if ((response.result.value) != nil) {
+                let student = Student()
                 
                 let swifty = JSON(response.result.value!)
                 guard swifty.count != 0 else {
@@ -83,81 +84,83 @@ class ViewController: UIViewController {
                 
                 if let resData = swifty["projects_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setProjectsUsers(data: data)
+                    student.setProjectsUsers(data: data)
                 }
                 
                 if let resData = swifty["campus_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setCampusUsers(data: data)
+                    student.setCampusUsers(data: data)
                 }
                 
                 if let resData = swifty["languages_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setLanguagesUsers(data: data)
+                    student.setLanguagesUsers(data: data)
                 }
                 
                 if let resData = swifty["expertises_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setExpertisesUsers(data: data)
+                    student.setExpertisesUsers(data: data)
                 }
                 
                 if let resData = swifty["cursus_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setCursusUsers(data: data)
+                    student.setCursusUsers(data: data)
                 }
                 
                 if let resData = swifty["campus"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
-                    self.student.setCampus(data: data)
+                    student.setCampus(data: data)
                 }
                 
                 if let resData = swifty["correction_point"].int {
-                    self.student.correction_point = resData
+                    student.correction_point = resData
                 }
                 
                 if let resData = swifty["pool_month"].string {
-                    self.student.pool_month = resData
+                    student.pool_month = resData
                 }
                 
                 if let resData = swifty["displayname"].string {
-                    self.student.displayname = resData
+                    student.displayname = resData
                 }
                 
                 if let resData = swifty["last_name"].string {
-                    self.student.last_name = resData
+                    student.last_name = resData
                 }
                 
                 if let resData = swifty["image_url"].string {
-                    self.student.image_url = resData
+                    student.image_url = resData
                 }
                 
                 if let resData = swifty["url"].string {
-                    self.student.url = resData
+                    student.url = resData
                 }
                 
                 if let resData = swifty["email"].string {
-                    self.student.email = resData
+                    student.email = resData
                 }
                 
                 if let resData = swifty["pool_year"].string {
-                    self.student.pool_year = resData
+                    student.pool_year = resData
                 }
                 
                 if let resData = swifty["wallet"].int {
-                    self.student.wallet = resData
+                    student.wallet = resData
                 }
                 
                 if let resData = swifty["login"].string {
-                    self.student.login = resData
+                    student.login = resData
                 }
                 
                 if let resData = swifty["staff?"].bool {
-                    self.student.staff = resData
+                    student.staff = resData
                 }
                 
                 if let resData = swifty["first_name"].string {
-                    self.student.first_name = resData
+                    student.first_name = resData
                 }
+                
+                self.studentInfo = student
                 
                 SVProgressHUD.dismiss()
                 self.searchTextField.text = ""
@@ -175,7 +178,7 @@ class ViewController: UIViewController {
         if segue.identifier == "showDetails" {
             let secondVC = segue.destination as! SecondViewController
             
-            secondVC.studentInfo = student
+            secondVC.studentInfo = studentInfo
             
         }
     }

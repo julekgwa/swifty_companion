@@ -19,6 +19,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var progressBar: GradientProgressBar!
     @IBOutlet weak var corrections: UILabel!
+    @IBOutlet weak var skillsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

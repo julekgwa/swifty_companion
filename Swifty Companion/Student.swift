@@ -36,6 +36,7 @@ public class Student {
     public var achievements : Array<String>?
     public var first_name : String = ""
     public var titles : Array<String>?
+    public var studentSkills = Array<Skills>()
     
     func setCampusUsers(data: [[String: AnyObject]]) {
         for item in data {
@@ -106,7 +107,6 @@ public class Student {
     func setCursusUsers(data: [[String: AnyObject]]) {
         for item in data {
             let cursus_user = CursusUser()
-            let skills = Skills()
             let user = User()
             let cursus = Cursus()
             
@@ -117,9 +117,17 @@ public class Student {
             cursus_user.level = item["level"] as? Double ?? 0.0
             cursus_user.cursus_id = item["cursus_id"] as? Int ?? 0
             
-            skills.id = item["skills"]?["id"] as? Int ?? 0
-            skills.level = item["skills"]?["level"] as? Double ?? 0.0
-            skills.name = item["skills"]?["name"] as? String ?? ""
+            if let resData = item["skills"]  {
+                let stu_data = resData as! [[String: AnyObject]]
+                for skill_item in stu_data {
+                    let skills = Skills()
+                    skills.id = skill_item["id"] as? Int ?? 0
+                    skills.level = skill_item["level"] as? Double ?? 0.0
+                    skills.name = skill_item["name"] as? String ?? ""
+                    cursus_user.skills.append(skills)
+                }
+            }
+            
             user.id = item["user"]?["id"] as? Int ?? 0
             user.login = item["user"]?["login"] as? String ?? ""
             user.url = item["user"]?["url"] as? String ?? ""
@@ -128,10 +136,8 @@ public class Student {
             cursus.slug = item["cursus"]?["slug"] as? String ?? ""
             cursus.created_at = item["cursus"]?["created_at"] as? String ?? ""
             
-            cursus_user.skills.append(skills)
             cursus_user.user = user
             cursus_user.cursus = cursus
-            
             cursus_users.append(cursus_user)
             
         }

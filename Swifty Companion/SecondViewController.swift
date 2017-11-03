@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // remove me
     var studentInfo = Student()
@@ -17,11 +17,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        studentArray = Array<Student>()
+//      var iter = 0
+//        while iter < studentInfo.studentSkills.count {
+//            print(studentInfo.studentSkills[iter].description())
+//            iter = iter + 1
+//        }
+        studentArray.removeAll()
         studentArray.append(studentInfo)
-        print(studentArray.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +58,20 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return studentArray[0].cursus_users[0].skills.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let view = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath) as! SkillsCollectionViewCell
+        
+        view.skillName.text = studentArray[0].cursus_users[0].skills[indexPath.row].name
+        view.skillLevel.text = String(studentArray[0].cursus_users[0].skills[indexPath.row].level)
+        return view
+    }
+    
     
     
 
