@@ -18,26 +18,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network &amp; system administratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lph-59-Q7q">
-                        <rect key="frame" x="20" y="5" width="244" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vha-hZ-Ik0" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                        <rect key="frame" x="20" y="28" width="244" height="2"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </progressView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100.23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-bZ-MSb">
-                        <rect key="frame" x="268" y="9" width="52" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxf-RU-2ZG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network &amp; system administratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lph-59-Q7q">
+                                <rect key="frame" x="0.0" y="3" width="252" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vha-hZ-Ik0" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                <rect key="frame" x="0.0" y="28" width="320" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-bZ-MSb">
+                                <rect key="frame" x="264" y="8" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lph-59-Q7q" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" id="0Ah-Zx-iFh"/>
+                            <constraint firstItem="lph-59-Q7q" firstAttribute="leading" secondItem="Vha-hZ-Ik0" secondAttribute="leading" id="H9j-XY-6IZ"/>
+                            <constraint firstItem="lph-59-Q7q" firstAttribute="trailing" secondItem="Vha-hZ-Ik0" secondAttribute="trailing" constant="-68" id="dG9-ay-j1B"/>
+                            <constraint firstItem="Vha-hZ-Ik0" firstAttribute="top" secondItem="lph-59-Q7q" secondAttribute="bottom" constant="4" id="flS-MU-fDA"/>
+                            <constraint firstAttribute="trailing" secondItem="PTE-bZ-MSb" secondAttribute="trailing" constant="4" id="jmv-eY-tH5"/>
+                            <constraint firstAttribute="trailing" secondItem="Vha-hZ-Ik0" secondAttribute="trailing" id="m1L-Vw-Qwa"/>
+                            <constraint firstItem="Vha-hZ-Ik0" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" id="qMi-17-Mmb"/>
+                            <constraint firstItem="PTE-bZ-MSb" firstAttribute="bottom" secondItem="Vha-hZ-Ik0" secondAttribute="bottom" constant="-1" id="qZ8-ir-dXK"/>
+                            <constraint firstItem="lph-59-Q7q" firstAttribute="top" secondItem="nxf-RU-2ZG" secondAttribute="top" constant="3" id="vpY-XA-EwH"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="nxf-RU-2ZG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YFk-Wg-muu"/>
+                <constraint firstItem="nxf-RU-2ZG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yy1-wJ-H3k"/>
+                <constraint firstItem="nxf-RU-2ZG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZVd-gq-GOD"/>
+                <constraint firstAttribute="bottom" secondItem="nxf-RU-2ZG" secondAttribute="bottom" id="aix-0F-xCY"/>
+                <constraint firstAttribute="trailing" secondItem="nxf-RU-2ZG" secondAttribute="trailing" id="l5m-Sl-6oS"/>
+                <constraint firstAttribute="trailing" secondItem="nxf-RU-2ZG" secondAttribute="trailing" id="mDE-dv-OMh"/>
+            </constraints>
             <connections>
                 <outlet property="level" destination="PTE-bZ-MSb" id="DpH-Nt-c7a"/>
                 <outlet property="projectName" destination="lph-59-Q7q" id="qK4-d5-RCg"/>

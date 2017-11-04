@@ -18,22 +18,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network &amp; system administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mta-mC-4g6">
-                        <rect key="frame" x="20" y="15" width="253" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="125%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnR-gL-Dlm">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2V-zc-Czm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network &amp; system administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mta-mC-4g6">
+                                <rect key="frame" x="0.0" y="15" width="253" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mta-mC-4g6" firstAttribute="top" secondItem="j2V-zc-Czm" secondAttribute="top" constant="15" id="Lf7-EP-cmb"/>
+                            <constraint firstItem="mta-mC-4g6" firstAttribute="leading" secondItem="j2V-zc-Czm" secondAttribute="leading" id="Swi-et-2G0"/>
+                            <constraint firstAttribute="bottom" secondItem="mta-mC-4g6" secondAttribute="bottom" constant="14" id="TNn-tX-ibs"/>
+                            <constraint firstAttribute="trailing" secondItem="mta-mC-4g6" secondAttribute="trailing" constant="67" id="nQd-yz-uag"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnR-gL-Dlm">
                         <rect key="frame" x="278" y="15" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="j2V-zc-Czm" secondAttribute="trailing" id="0as-YO-hfl"/>
+                <constraint firstAttribute="bottom" secondItem="j2V-zc-Czm" secondAttribute="bottom" id="BPn-EB-MHr"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cfv-4L-Lfu"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DQZ-Fw-REW"/>
+                <constraint firstItem="vnR-gL-Dlm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="278" id="OXq-cZ-VZu"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SzY-8c-VPY"/>
+                <constraint firstAttribute="trailing" secondItem="j2V-zc-Czm" secondAttribute="trailing" id="e4O-Jv-GwU"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="trailing" secondItem="vnR-gL-Dlm" secondAttribute="trailing" id="eMQ-aF-Ll7"/>
+                <constraint firstAttribute="bottom" secondItem="j2V-zc-Czm" secondAttribute="bottom" id="mMe-X1-mpy"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="centerY" secondItem="vnR-gL-Dlm" secondAttribute="centerY" id="mdu-xm-mwi"/>
+                <constraint firstAttribute="trailing" secondItem="vnR-gL-Dlm" secondAttribute="trailing" id="n3g-8t-5Ub"/>
+                <constraint firstAttribute="bottom" secondItem="vnR-gL-Dlm" secondAttribute="bottom" constant="14" id="nOi-rz-194"/>
+                <constraint firstItem="vnR-gL-Dlm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="rLC-aM-TFw"/>
+                <constraint firstItem="j2V-zc-Czm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yWB-uj-1cU"/>
+            </constraints>
             <connections>
                 <outlet property="percentage" destination="vnR-gL-Dlm" id="e4L-GU-ylN"/>
                 <outlet property="projectName" destination="mta-mC-4g6" id="8Qq-d5-bcy"/>

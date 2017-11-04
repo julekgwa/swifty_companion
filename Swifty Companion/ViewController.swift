@@ -165,7 +165,6 @@ class ViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 self.searchTextField.text = ""
                 self.performSegue(withIdentifier: "studentLogins", sender: self)
-//                print(self.student.description())
             }else {
                 print("ERROR")
             }
@@ -181,9 +180,6 @@ class ViewController: UIViewController {
             secondVC.studentInfo = studentInfo
             
         }
-    }
-    @IBAction func showLogin(_ sender: UIButton) {
-//        performSegue(withIdentifier: "studentLogins", sender: self)
     }
 }
 
