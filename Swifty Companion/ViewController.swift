@@ -164,7 +164,7 @@ class ViewController: UIViewController {
                 
                 SVProgressHUD.dismiss()
                 self.searchTextField.text = ""
-                self.performSegue(withIdentifier: "studentLogins", sender: self)
+                self.performSegue(withIdentifier: "studentInfo", sender: self)
             }else {
                 print("ERROR")
             }
@@ -174,12 +174,12 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "studentLogins" {
-            let secondVC = segue.destination as! InfoViewController
-            
-            secondVC.studentInfo = studentInfo
-            
-        }
+        let barViewControllers = segue.destination as! UITabBarController
+        let destinationViewController = barViewControllers.viewControllers?[0] as! StudentInfoViewController
+        destinationViewController.studentInfo = studentInfo
+        
+//        let secondDes = barViewControllers.viewControllers?[1] as! SecondViewController
+//        secondDes.test = "Hello TabBar 2"
     }
 }
 
