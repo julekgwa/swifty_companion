@@ -9,7 +9,7 @@
 import UIKit
 
 class StudentInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var skillsView: UICollectionView!
     
     @IBOutlet weak var skillLabel: UILabel!
@@ -22,7 +22,7 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         studentArray.removeAll()
         studentArray.append(studentInfo)
         
@@ -40,7 +40,7 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         projectLabel.backgroundColor = UIColor.flatSand()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,7 +100,13 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         
         let project = studentArray[0].projects_users[indexPath.row]
         view.projectName.text = project.project?.name
-        view.percentage.text = String("\(project.final_mark)%")
+        if project.status == "in_progress" {
+            view.percentage.text = String("🕙")
+        }else if project.status == "creating_group" {
+            view.percentage.text = String("👨‍👩‍👧‍👧")
+        }else {
+            view.percentage.text = String("\(project.final_mark)%")
+        }
         if project.validated == true {
             view.percentage.textColor = UIColor.flatGreen()
         }else {
@@ -110,15 +116,15 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         return view
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
