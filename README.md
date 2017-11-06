@@ -42,7 +42,7 @@ double click `Swifty Companion.xcworkspace` file with the white background
 
 ![build error](build_error.png)
 
-#### Possible fix
+## Possible fix
 
 Select project
 
