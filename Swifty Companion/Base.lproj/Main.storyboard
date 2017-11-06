@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Failed" id="8Va-e1-sx1"/>
+                    <tabBarItem key="tabBarItem" title="Failed" image="failed" id="8Va-e1-sx1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2N-CF-nxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,13 +108,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="In Progress" id="k07-Vv-Iib"/>
+                    <tabBarItem key="tabBarItem" title="In Progress" image="progress" id="k07-Vv-Iib"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd4-Ff-Vmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1457" y="-110"/>
         </scene>
-        <!--Student Info View Controller-->
+        <!--Info-->
         <scene sceneID="puE-p6-UXJ">
             <objects>
                 <viewController id="TCh-D5-mtE" customClass="StudentInfoViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                             <constraint firstItem="Mqr-6C-DlL" firstAttribute="leading" secondItem="Fhl-3W-gvS" secondAttribute="leading" id="hvc-hS-T5L"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" id="eUF-b9-RpU"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="profile" id="eUF-b9-RpU"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -282,7 +282,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Passed" id="uWi-cv-RgO"/>
+                    <tabBarItem key="tabBarItem" title="Passed" image="passed" id="uWi-cv-RgO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ2-t9-fOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,5 +327,9 @@
     </scenes>
     <resources>
         <image name="background" width="2160" height="3840"/>
+        <image name="failed" width="29" height="29"/>
+        <image name="passed" width="29" height="29"/>
+        <image name="profile" width="29" height="29"/>
+        <image name="progress" width="29" height="29"/>
     </resources>
 </document>
