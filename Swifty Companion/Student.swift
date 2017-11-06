@@ -22,6 +22,7 @@ public class Student {
     public var projects_users = Array<ProjectsUser>()
     public var failed_projects = Array<ProjectsUser>()
     public var validated_projects = Array<ProjectsUser>()
+    public var in_progress = Array<ProjectsUser>()
     public var image_url : String = ""
     public var expertises_users = Array<ExpertisesUser>()
     public var url : String = ""
@@ -38,7 +39,6 @@ public class Student {
     public var achievements : Array<String>?
     public var first_name : String = ""
     public var titles : Array<String>?
-    public var studentSkills = Array<Skills>()
     
     func setCampusUsers(data: [[String: AnyObject]]) {
         for item in data {
@@ -74,7 +74,7 @@ public class Student {
             project_user.occurrence = item["occurrence"] as? Int ?? 0
             project_user.id = (item["id"] as? Int)!
             project_user.final_mark = item["final_mark"] as? Int ?? 0
-            project_user.validated = item["validated"] as? Bool ?? false
+            project_user.validated = item["validated?"] as? Bool ?? false
             project_user.current_team_id = item["current_team_id"] as? Int ?? 0
             project_user.cursus_ids = (item["cursus_ids"] as? Array)!
             
@@ -84,11 +84,17 @@ public class Student {
             project.slug = item["project"]?["slug"] as? String ?? ""
             project.name = item["project"]?["name"] as? String ?? ""
             project_user.project = project
-
+            
+            // set failed and failed projects
             if project_user.validated == true {
                 validated_projects.append(project_user)
-            }else {
+            }else if project_user.status == "finished" && project_user.validated == false {
                 failed_projects.append(project_user)
+            }
+            
+            // get projects in progress
+            if project_user.status == "in_progress" || project_user.status == "creating_group" {
+                in_progress.append(project_user)
             }
             
             // append data

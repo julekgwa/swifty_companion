@@ -174,12 +174,20 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let barViewControllers = segue.destination as! UITabBarController
-        let destinationViewController = barViewControllers.viewControllers?[0] as! StudentInfoViewController
-        destinationViewController.studentInfo = studentInfo
-        
-//        let secondDes = barViewControllers.viewControllers?[1] as! SecondViewController
-//        secondDes.test = "Hello TabBar 2"
+        if segue.identifier == "studentInfo" {
+            let barViewControllers = segue.destination as! UITabBarController
+            let destinationViewController = barViewControllers.viewControllers?[0] as! StudentInfoViewController
+            destinationViewController.studentInfo = studentInfo
+            
+            let failedVC = barViewControllers.viewControllers?[1] as! FailedViewController
+            failedVC.failed_projects = studentInfo.failed_projects
+            
+            let in_progressVC = barViewControllers.viewControllers?[3] as! InProgressViewController
+            in_progressVC.in_progress = studentInfo.in_progress
+            
+            let validatedVC = barViewControllers.viewControllers?[2] as! PassedViewController
+            validatedVC.validated_projects = studentInfo.validated_projects
+        }
     }
 }
 

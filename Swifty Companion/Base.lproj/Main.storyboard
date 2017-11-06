@@ -79,7 +79,7 @@
         <!--Failed-->
         <scene sceneID="d4g-yD-5QD">
             <objects>
-                <viewController id="W6I-2Z-FaC" sceneMemberID="viewController">
+                <viewController id="W6I-2Z-FaC" customClass="FailedViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CtU-dL-Tjk"/>
                         <viewControllerLayoutGuide type="bottom" id="ox4-6v-BEh"/>
@@ -98,7 +98,7 @@
         <!--In Progress-->
         <scene sceneID="y4i-NI-qnX">
             <objects>
-                <viewController id="4ci-75-uUH" sceneMemberID="viewController">
+                <viewController id="4ci-75-uUH" customClass="InProgressViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ac-01-ZWE"/>
                         <viewControllerLayoutGuide type="bottom" id="vbE-mO-ehQ"/>
@@ -265,7 +265,7 @@
         <!--Passed-->
         <scene sceneID="52l-f8-fZ1">
             <objects>
-                <viewController id="Mdg-rG-KEJ" sceneMemberID="viewController">
+                <viewController id="Mdg-rG-KEJ" customClass="PassedViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUQ-Ug-OeR"/>
                         <viewControllerLayoutGuide type="bottom" id="ye2-Ih-wlT"/>
