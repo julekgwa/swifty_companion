@@ -38,3 +38,20 @@ double click `Swifty Companion.xcworkspace` file with the white background
 
 ![xcworkspace](workspace.png)
 
+## Build Errors
+
+![build error](build_error.png)
+
+#### Possible fix
+
+Select project
+
+![fix](project.png)
+
+Choose a lower version
+
+![deployment target](target.png)
+
+Click Generic iOS Device to choose a Simulator
+
+![choose simulator](change.png)
