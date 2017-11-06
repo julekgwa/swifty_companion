@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FailedViewController: UIViewController {
+class FailedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var failedTableView: UITableView!
     
@@ -18,12 +18,25 @@ class FailedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(failed_projects.count)
+        let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
+        failedTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return failed_projects.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "projectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
+        cell.projectName.text = failed_projects[indexPath.row].project?.name
+        cell.marks.text = String(failed_projects[indexPath.row].final_mark)
+        return cell
     }
     
 

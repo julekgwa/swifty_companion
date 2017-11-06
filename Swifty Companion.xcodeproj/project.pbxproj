@@ -11,6 +11,8 @@
 		8C62744A1FB0506C00EB072D /* FailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6274491FB0506C00EB072D /* FailedViewController.swift */; };
 		8C62744C1FB0507F00EB072D /* PassedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62744B1FB0507F00EB072D /* PassedViewController.swift */; };
 		8C62744E1FB0508F00EB072D /* InProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62744D1FB0508F00EB072D /* InProgressViewController.swift */; };
+		8C6274531FB0734F00EB072D /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6274511FB0734F00EB072D /* ProjectsTableViewCell.swift */; };
+		8C6274541FB0734F00EB072D /* ProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6274521FB0734F00EB072D /* ProjectsTableViewCell.xib */; };
 		8C7F7BC91FA8F23800A423B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */; };
 		8C7F7BCB1FA8F23800A423B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */; };
 		8C7F7BCE1FA8F23900A423B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F7BCC1FA8F23900A423B7 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		8C6274491FB0506C00EB072D /* FailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedViewController.swift; sourceTree = "<group>"; };
 		8C62744B1FB0507F00EB072D /* PassedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassedViewController.swift; sourceTree = "<group>"; };
 		8C62744D1FB0508F00EB072D /* InProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InProgressViewController.swift; sourceTree = "<group>"; };
+		8C6274511FB0734F00EB072D /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
+		8C6274521FB0734F00EB072D /* ProjectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectsTableViewCell.xib; sourceTree = "<group>"; };
 		8C7F7BC51FA8F23800A423B7 /* Swifty Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				8CD78AA51FAD865F00E9231F /* SkillCollectionViewCell.xib */,
 				8CD78AA81FAD8A5700E9231F /* ProjectCollectionViewCell.swift */,
 				8CD78AA91FAD8A5700E9231F /* ProjectCollectionViewCell.xib */,
+				8C6274511FB0734F00EB072D /* ProjectsTableViewCell.swift */,
+				8C6274521FB0734F00EB072D /* ProjectsTableViewCell.xib */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				8C7F7BD01FA8F23900A423B7 /* Assets.xcassets in Resources */,
 				8C7F7BCE1FA8F23900A423B7 /* Main.storyboard in Resources */,
 				8CD78AA11FAD652A00E9231F /* ProfileViewCell.xib in Resources */,
+				8C6274541FB0734F00EB072D /* ProjectsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +364,7 @@
 				8CD78AA31FAD694400E9231F /* InfoViewController.swift in Sources */,
 				8CCBE0261FAAA95A00DC3490 /* Skills.swift in Sources */,
 				8CDC87F11FAE4D7200806EA2 /* MyTabViewController.swift in Sources */,
+				8C6274531FB0734F00EB072D /* ProjectsTableViewCell.swift in Sources */,
 				8C7F7BC91FA8F23800A423B7 /* AppDelegate.swift in Sources */,
 				8C62744E1FB0508F00EB072D /* InProgressViewController.swift in Sources */,
 				8CCBE0181FAAA82800DC3490 /* Student.swift in Sources */,

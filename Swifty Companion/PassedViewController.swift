@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PassedViewController: UIViewController {
+class PassedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var passedTableView: UITableView!
     
@@ -16,16 +16,28 @@ class PassedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        print(validated_projects.count)
+        let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
+        passedTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return validated_projects.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "projectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
+        cell.projectName.text = validated_projects[indexPath.row].project?.name
+        cell.marks.text = String(validated_projects[indexPath.row].final_mark)
+        return cell
+    }
 
     /*
     // MARK: - Navigation
