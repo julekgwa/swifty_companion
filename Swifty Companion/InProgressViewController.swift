@@ -10,6 +10,8 @@ import UIKit
 
 class InProgressViewController: UIViewController {
 
+    @IBOutlet weak var inProgressTableView: UITableView!
+    
     var in_progress = Array<ProjectsUser>()
     
     override func viewDidLoad() {

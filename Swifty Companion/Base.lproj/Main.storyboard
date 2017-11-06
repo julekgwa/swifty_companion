@@ -87,13 +87,28 @@
                     <view key="view" contentMode="scaleToFill" id="77S-JF-6da">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-2t-UFn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ox4-6v-BEh" firstAttribute="top" secondItem="zs4-2t-UFn" secondAttribute="bottom" id="FB5-lv-IuL"/>
+                            <constraint firstItem="zs4-2t-UFn" firstAttribute="top" secondItem="CtU-dL-Tjk" secondAttribute="bottom" id="bSU-7f-NlV"/>
+                            <constraint firstItem="zs4-2t-UFn" firstAttribute="leading" secondItem="77S-JF-6da" secondAttribute="leading" id="fIR-zz-RL4"/>
+                            <constraint firstAttribute="trailing" secondItem="zs4-2t-UFn" secondAttribute="trailing" id="qZ5-tA-5WC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Failed" image="failed" id="8Va-e1-sx1"/>
+                    <connections>
+                        <outlet property="failedTableView" destination="zs4-2t-UFn" id="cZN-9b-NPR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2N-CF-nxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321" y="-809"/>
+            <point key="canvasLocation" x="3320.8000000000002" y="-809.14542728635683"/>
         </scene>
         <!--In Progress-->
         <scene sceneID="y4i-NI-qnX">
@@ -106,13 +121,28 @@
                     <view key="view" contentMode="scaleToFill" id="xEP-kd-Dp8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-33-qE2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gMw-33-qE2" secondAttribute="trailing" id="Iq8-LI-teB"/>
+                            <constraint firstItem="vbE-mO-ehQ" firstAttribute="top" secondItem="gMw-33-qE2" secondAttribute="bottom" id="U2x-cL-xKF"/>
+                            <constraint firstItem="gMw-33-qE2" firstAttribute="leading" secondItem="xEP-kd-Dp8" secondAttribute="leading" id="feL-tQ-BUO"/>
+                            <constraint firstItem="gMw-33-qE2" firstAttribute="top" secondItem="4ac-01-ZWE" secondAttribute="bottom" id="uln-Wl-bnR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Progress" image="progress" id="k07-Vv-Iib"/>
+                    <connections>
+                        <outlet property="inProgressTableView" destination="gMw-33-qE2" id="H2u-Qo-Feg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd4-Ff-Vmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-110"/>
+            <point key="canvasLocation" x="1456.8" y="-110.19490254872565"/>
         </scene>
         <!--Info-->
         <scene sceneID="puE-p6-UXJ">
@@ -274,19 +304,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-AQ-Kz3">
-                                <rect key="frame" x="164" y="200" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XgU-LV-Y7l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ye2-Ih-wlT" firstAttribute="top" secondItem="XgU-LV-Y7l" secondAttribute="bottom" id="Mww-ot-aMK"/>
+                            <constraint firstItem="XgU-LV-Y7l" firstAttribute="leading" secondItem="oOJ-yk-8V5" secondAttribute="leading" id="Skp-DE-wjF"/>
+                            <constraint firstItem="XgU-LV-Y7l" firstAttribute="top" secondItem="fUQ-Ug-OeR" secondAttribute="bottom" id="bxX-YP-L96"/>
+                            <constraint firstAttribute="trailing" secondItem="XgU-LV-Y7l" secondAttribute="trailing" id="tHF-eE-7uq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Passed" image="passed" id="uWi-cv-RgO"/>
+                    <connections>
+                        <outlet property="passedTableView" destination="XgU-LV-Y7l" id="tTW-wb-NTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ2-t9-fOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2337" y="-1560"/>
+            <point key="canvasLocation" x="2336.8000000000002" y="-1560.2698650674663"/>
         </scene>
         <!--My Tab View Controller-->
         <scene sceneID="8Rt-PZ-PII">

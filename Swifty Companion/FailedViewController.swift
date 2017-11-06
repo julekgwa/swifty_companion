@@ -10,6 +10,8 @@ import UIKit
 
 class FailedViewController: UIViewController {
 
+    @IBOutlet weak var failedTableView: UITableView!
+    
     var failed_projects = Array<ProjectsUser>()
     
     override func viewDidLoad() {

@@ -10,6 +10,8 @@ import UIKit
 
 class PassedViewController: UIViewController {
 
+    @IBOutlet weak var passedTableView: UITableView!
+    
     var validated_projects = Array<ProjectsUser>()
     
     override func viewDidLoad() {
