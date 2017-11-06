@@ -20,6 +20,8 @@ public class Student {
     public var id : Int = 0
     public var phone : String = ""
     public var projects_users = Array<ProjectsUser>()
+    public var failed_projects = Array<ProjectsUser>()
+    public var validated_projects = Array<ProjectsUser>()
     public var image_url : String = ""
     public var expertises_users = Array<ExpertisesUser>()
     public var url : String = ""
@@ -82,6 +84,12 @@ public class Student {
             project.slug = item["project"]?["slug"] as? String ?? ""
             project.name = item["project"]?["name"] as? String ?? ""
             project_user.project = project
+
+            if project_user.validated == true {
+                validated_projects.append(project_user)
+            }else {
+                failed_projects.append(project_user)
+            }
             
             // append data
             projects_users.append(project_user)
