@@ -66,9 +66,9 @@ class ViewController: UIViewController {
     @IBAction func showDetailsBtn(_ sender: Any) {
 //        performSegue(withIdentifier: "showDetails", sender: self)
         SVProgressHUD.show()
-        guard let login = searchTextField.text, isValid(str: login) else {
+        guard let login : String = searchTextField.text?.trim(), isValid(str: login) else {
             SVProgressHUD.dismiss()
-            SVProgressHUD.showError(withStatus: "Textfield is empty")
+            showAlert(title: "No Login", msg: "Login can't be empty")
             return }
         let parameters: Parameters = ["access_token": access_token]
         Alamofire.request("\(API_URL)users/\(login)", method: .get, parameters: parameters).responseJSON { response in
@@ -171,6 +171,16 @@ class ViewController: UIViewController {
             
         }
 
+    }
+    
+    func showAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
