@@ -11,8 +11,9 @@ import UIKit
 class FailedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var failedTableView: UITableView!
-    
+    @IBOutlet weak var noProjects: UILabel!
     var failed_projects = Array<ProjectsUser>()
+    var showLabel: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,11 @@ class FailedViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
         failedTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
+        
+        if showLabel {
+            failedTableView.isHidden = true
+            noProjects.isHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

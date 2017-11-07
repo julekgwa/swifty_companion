@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,6 +97,13 @@
                                     <outlet property="delegate" destination="W6I-2Z-FaC" id="arK-aa-VFJ"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQK-Tp-L4b">
+                                <rect key="frame" x="143" y="323" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -108,6 +116,7 @@
                     <tabBarItem key="tabBarItem" title="Failed" image="failed" id="8Va-e1-sx1"/>
                     <connections>
                         <outlet property="failedTableView" destination="zs4-2t-UFn" id="cZN-9b-NPR"/>
+                        <outlet property="noProjects" destination="YQK-Tp-L4b" id="SHQ-Hg-szR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2N-CF-nxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,18 +144,29 @@
                                     <outlet property="delegate" destination="4ci-75-uUH" id="aJ0-7c-mIj"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-jR-OjV">
+                                <rect key="frame" x="143" y="323" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bbw-jR-OjV" firstAttribute="top" secondItem="4ac-01-ZWE" secondAttribute="bottom" constant="259" id="65v-Pe-vp9"/>
+                            <constraint firstItem="vbE-mO-ehQ" firstAttribute="top" secondItem="bbw-jR-OjV" secondAttribute="bottom" constant="274" id="A0V-Ys-v9H"/>
                             <constraint firstAttribute="trailing" secondItem="gMw-33-qE2" secondAttribute="trailing" id="Iq8-LI-teB"/>
                             <constraint firstItem="vbE-mO-ehQ" firstAttribute="top" secondItem="gMw-33-qE2" secondAttribute="bottom" id="U2x-cL-xKF"/>
                             <constraint firstItem="gMw-33-qE2" firstAttribute="leading" secondItem="xEP-kd-Dp8" secondAttribute="leading" id="feL-tQ-BUO"/>
+                            <constraint firstItem="bbw-jR-OjV" firstAttribute="leading" secondItem="xEP-kd-Dp8" secondAttribute="leadingMargin" constant="127" id="fmB-fS-GqQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bbw-jR-OjV" secondAttribute="trailing" constant="127" id="snf-gG-vR3"/>
                             <constraint firstItem="gMw-33-qE2" firstAttribute="top" secondItem="4ac-01-ZWE" secondAttribute="bottom" constant="-64" id="uln-Wl-bnR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Progress" image="progress" id="k07-Vv-Iib"/>
                     <connections>
                         <outlet property="inProgressTableView" destination="gMw-33-qE2" id="H2u-Qo-Feg"/>
+                        <outlet property="noProjects" destination="bbw-jR-OjV" id="G0k-br-0UT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd4-Ff-Vmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,6 +363,13 @@
                                     <outlet property="delegate" destination="Mdg-rG-KEJ" id="OOc-K7-NeR"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-zU-uh5">
+                                <rect key="frame" x="143" y="323" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -354,6 +381,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Passed" image="passed" id="uWi-cv-RgO"/>
                     <connections>
+                        <outlet property="noProjects" destination="ZCt-zU-uh5" id="oPh-6g-CL7"/>
                         <outlet property="passedTableView" destination="XgU-LV-Y7l" id="tTW-wb-NTO"/>
                     </connections>
                 </viewController>

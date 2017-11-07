@@ -12,7 +12,9 @@ class InProgressViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var inProgressTableView: UITableView!
     
+    @IBOutlet weak var noProjects: UILabel!
     var in_progress = Array<ProjectsUser>()
+    var showLabel: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,11 @@ class InProgressViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
         let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
         inProgressTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
+        
+        if showLabel {
+            inProgressTableView.isHidden = true
+            noProjects.isHidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {

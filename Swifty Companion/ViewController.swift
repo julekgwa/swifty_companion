@@ -212,12 +212,21 @@ class ViewController: UIViewController {
             
             let failedVC = barViewControllers.viewControllers?[1] as! FailedViewController
             failedVC.failed_projects = studentInfo.failed_projects
+            if failedVC.failed_projects.count == 0 {
+                failedVC.showLabel = true
+            }
             
             let in_progressVC = barViewControllers.viewControllers?[3] as! InProgressViewController
             in_progressVC.in_progress = studentInfo.in_progress
+            if in_progressVC.in_progress.count == 0 {
+                in_progressVC.showLabel = true
+            }
             
             let validatedVC = barViewControllers.viewControllers?[2] as! PassedViewController
             validatedVC.validated_projects = studentInfo.validated_projects
+            if validatedVC.validated_projects.count == 0 {
+                validatedVC.showLabel = true
+            }
         }
     }
 }

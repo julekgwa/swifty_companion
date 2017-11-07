@@ -12,7 +12,9 @@ class PassedViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var passedTableView: UITableView!
     
+    @IBOutlet weak var noProjects: UILabel!
     var validated_projects = Array<ProjectsUser>()
+    var showLabel: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,11 @@ class PassedViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
         passedTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
+        
+        if showLabel {
+            passedTableView.isHidden = true
+            noProjects.isHidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
