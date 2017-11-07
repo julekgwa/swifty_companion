@@ -40,6 +40,7 @@
 		8CD78AAB1FAD8A5700E9231F /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD78AA91FAD8A5700E9231F /* ProjectCollectionViewCell.xib */; };
 		8CDC87EF1FAE46ED00806EA2 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC87EE1FAE46ED00806EA2 /* StudentInfoViewController.swift */; };
 		8CDC87F11FAE4D7200806EA2 /* MyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC87F01FAE4D7200806EA2 /* MyTabViewController.swift */; };
+		8CF880371FB18ED000CC2710 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF880361FB18ED000CC2710 /* String+Trim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		8CD78AA91FAD8A5700E9231F /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
 		8CDC87EE1FAE46ED00806EA2 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		8CDC87F01FAE4D7200806EA2 /* MyTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabViewController.swift; sourceTree = "<group>"; };
+		8CF880361FB18ED000CC2710 /* String+Trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
 		D037115EB057F9DDA8D361F8 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				8C7F7BCF1FA8F23900A423B7 /* Assets.xcassets */,
 				8C7F7BDA1FA90E6900A423B7 /* icon.png */,
 				8C7F7BD41FA8F23900A423B7 /* Info.plist */,
+				8CF880381FB18ED500CC2710 /* Extensions */,
 			);
 			path = "Swifty Companion";
 			sourceTree = "<group>";
@@ -191,6 +194,14 @@
 				8C6274521FB0734F00EB072D /* ProjectsTableViewCell.xib */,
 			);
 			name = CustomCell;
+			sourceTree = "<group>";
+		};
+		8CF880381FB18ED500CC2710 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CF880361FB18ED000CC2710 /* String+Trim.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		D78A4061CAE5B60359967338 /* Frameworks */ = {
@@ -348,6 +359,7 @@
 				8CCBE01E1FAAA8C900DC3490 /* ProjectsUser.swift in Sources */,
 				8CCBE0241FAAA93C00DC3490 /* CursusUser.swift in Sources */,
 				8CD78AA61FAD865F00E9231F /* SkillCollectionViewCell.swift in Sources */,
+				8CF880371FB18ED000CC2710 /* String+Trim.swift in Sources */,
 				8CD78AA01FAD652A00E9231F /* ProfileViewCell.swift in Sources */,
 				8C62744A1FB0506C00EB072D /* FailedViewController.swift in Sources */,
 				8CCBE0321FAAABE200DC3490 /* Campus.swift in Sources */,
