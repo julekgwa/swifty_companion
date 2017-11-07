@@ -11,7 +11,9 @@ import UIKit
 class StudentInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var skillsView: UICollectionView!
+    @IBOutlet weak var noSkillsLabel: UILabel!
     
+    @IBOutlet weak var noProjectsLabel: UICollectionView!
     @IBOutlet weak var skillLabel: UILabel!
     @IBOutlet weak var projectView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -44,6 +46,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func hideObject() {
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,31 +92,35 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         if collectionView.tag == 1 {
             let view = collectionView.dequeueReusableCell(withReuseIdentifier: "skills", for: indexPath) as! SkillCollectionViewCell
             
-            view.projectName.text = studentArray[0].cursus_users[0].skills[indexPath.row].name
-            view.level.text = String(studentArray[0].cursus_users[0].skills[indexPath.row].level)
-            let level : Double = studentArray[0].cursus_users[0].skills[indexPath.row].level
-            view.projectProgress.setProgress(0.0, animated: true)
-            let percentage = level.truncatingRemainder(dividingBy: 1)
-            view.projectProgress.setProgress(Float(percentage), animated: true)
-            view.projectProgress.progress = Float(percentage)
+            if studentArray[0].cursus_users[0].skills.count > 0 {
+                view.projectName.text = studentArray[0].cursus_users[0].skills[indexPath.row].name
+                view.level.text = String(studentArray[0].cursus_users[0].skills[indexPath.row].level)
+                let level : Double = studentArray[0].cursus_users[0].skills[indexPath.row].level
+                view.projectProgress.setProgress(0.0, animated: true)
+                let percentage = level.truncatingRemainder(dividingBy: 1)
+                view.projectProgress.setProgress(Float(percentage), animated: true)
+                view.projectProgress.progress = Float(percentage)
+            }
             return view
         }
         
         let view = collectionView.dequeueReusableCell(withReuseIdentifier: "projects", for: indexPath) as! ProjectCollectionViewCell
         
-        let project = studentArray[0].projects_users[indexPath.row]
-        view.projectName.text = project.project?.name
-        if project.status == "in_progress" {
-            view.percentage.text = String("🕙")
-        }else if project.status == "creating_group" {
-            view.percentage.text = String("👨‍👩‍👧‍👧")
-        }else {
-            view.percentage.text = String("\(project.final_mark)%")
-        }
-        if project.validated == true {
-            view.percentage.textColor = UIColor.flatGreen()
-        }else {
-            view.percentage.textColor = UIColor.flatRed()
+        if studentArray[0].projects_users.count > 0 {
+            let project = studentArray[0].projects_users[indexPath.row]
+            view.projectName.text = project.project?.name
+            if project.status == "in_progress" {
+                view.percentage.text = String("🕙")
+            }else if project.status == "creating_group" {
+                view.percentage.text = String("👨‍👩‍👧‍👧")
+            }else {
+                view.percentage.text = String("\(project.final_mark)%")
+            }
+            if project.validated == true {
+                view.percentage.textColor = UIColor.flatGreen()
+            }else {
+                view.percentage.textColor = UIColor.flatRed()
+            }
         }
         
         return view

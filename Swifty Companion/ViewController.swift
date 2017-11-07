@@ -85,11 +85,13 @@ class ViewController: UIViewController {
                 let student = Student()
                 
                 let swifty = JSON(response.result.value!)
+                
+                // login not found
                 guard swifty.count != 0 else {
-                    SVProgressHUD.showError(withStatus: "Unable to find login")
+                    self.showAlert(title: "Not Found", msg: "Unable to find login", alertType: .LoginEmpty)
                     return
                 }
-                
+
                 if let resData = swifty["projects_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
                     student.setProjectsUsers(data: data)
