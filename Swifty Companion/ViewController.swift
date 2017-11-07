@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
+enum AlertType {
+    case LoginEmpty
+    case TokenError
+}
+
 class ViewController: UIViewController {
 
     // outlets
@@ -45,13 +50,14 @@ class ViewController: UIViewController {
         SVProgressHUD.show()
         let parameters: Parameters = ["grant_type": "client_credentials", "client_id": CLIENT_ID, "client_secret": CLIENT_SECRET]
         Alamofire.request(TOKEN_URL, method: .post, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
             if response.result.isSuccess {
                 let token : JSON = JSON(response.result.value!)
                 self.access_token = token["access_token"].string!
+                 self.searchView.isHidden = false
+            } else if response.result.isFailure {
+                self.showAlert(title: "Token Error", msg: "Unable to get token", alertType: .TokenError)
             }
-            // dismiss progress HUD
-            SVProgressHUD.dismiss()
-            self.searchView.isHidden = false
         }
     }
     
@@ -66,22 +72,26 @@ class ViewController: UIViewController {
     @IBAction func showDetailsBtn(_ sender: Any) {
 //        performSegue(withIdentifier: "showDetails", sender: self)
         SVProgressHUD.show()
-        guard let login = searchTextField.text, isValid(str: login) else {
+        guard let login : String = searchTextField.text?.trim(), isValid(str: login) else {
             SVProgressHUD.dismiss()
-            SVProgressHUD.showError(withStatus: "Textfield is empty")
+            showAlert(title: "No Login", msg: "Login can't be empty", alertType: .LoginEmpty)
             return }
         let parameters: Parameters = ["access_token": access_token]
+        searchView.isHidden = true
         Alamofire.request("\(API_URL)users/\(login)", method: .get, parameters: parameters).responseJSON { response in
-            
+            SVProgressHUD.dismiss()
+            self.searchView.isHidden = false
             if ((response.result.value) != nil) {
                 let student = Student()
                 
                 let swifty = JSON(response.result.value!)
+                
+                // login not found
                 guard swifty.count != 0 else {
-                    SVProgressHUD.showError(withStatus: "Unable to find login")
+                    self.showAlert(title: "Not Found", msg: "Unable to find login", alertType: .LoginEmpty)
                     return
                 }
-                
+
                 if let resData = swifty["projects_users"].arrayObject {
                     let data = resData as! [[String: AnyObject]]
                     student.setProjectsUsers(data: data)
@@ -162,23 +172,61 @@ class ViewController: UIViewController {
                 
                 self.studentInfo = student
                 
-                SVProgressHUD.dismiss()
                 self.searchTextField.text = ""
-                self.performSegue(withIdentifier: "studentLogins", sender: self)
+                self.performSegue(withIdentifier: "studentInfo", sender: self)
             }else {
-                print("ERROR")
+                self.showAlert(title: "Search Error", msg: "Unable to complete your request", alertType: .LoginEmpty)
             }
             
         }
 
     }
     
+    func showAlert(title: String, msg: String, alertType: AlertType) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        if case alertType = AlertType.LoginEmpty {
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+        } else if case alertType = AlertType.TokenError {
+            alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                self.getToken()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "studentLogins" {
-            let secondVC = segue.destination as! InfoViewController
+        if segue.identifier == "studentInfo" {
+            let barViewControllers = segue.destination as! UITabBarController
+            let destinationViewController = barViewControllers.viewControllers?[0] as! StudentInfoViewController
+            destinationViewController.studentInfo = studentInfo
             
-            secondVC.studentInfo = studentInfo
+            let failedVC = barViewControllers.viewControllers?[1] as! FailedViewController
+            failedVC.failed_projects = studentInfo.failed_projects
+            if failedVC.failed_projects.count == 0 {
+                failedVC.showLabel = true
+            }
             
+            let in_progressVC = barViewControllers.viewControllers?[3] as! InProgressViewController
+            in_progressVC.in_progress = studentInfo.in_progress
+            if in_progressVC.in_progress.count == 0 {
+                in_progressVC.showLabel = true
+            }
+            
+            let validatedVC = barViewControllers.viewControllers?[2] as! PassedViewController
+            validatedVC.validated_projects = studentInfo.validated_projects
+            if validatedVC.validated_projects.count == 0 {
+                validatedVC.showLabel = true
+            }
         }
     }
 }
