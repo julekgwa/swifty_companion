@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
+enum AlertType {
+    case LoginEmpty
+    case TokenError
+}
+
 class ViewController: UIViewController {
 
     // outlets
@@ -45,13 +50,14 @@ class ViewController: UIViewController {
         SVProgressHUD.show()
         let parameters: Parameters = ["grant_type": "client_credentials", "client_id": CLIENT_ID, "client_secret": CLIENT_SECRET]
         Alamofire.request(TOKEN_URL, method: .post, parameters: parameters).responseJSON { response in
+            SVProgressHUD.dismiss()
             if response.result.isSuccess {
                 let token : JSON = JSON(response.result.value!)
                 self.access_token = token["access_token"].string!
+                 self.searchView.isHidden = false
+            } else if response.result.isFailure {
+                self.showAlert(title: "Token Error", msg: "Unable to get token", alertType: .TokenError)
             }
-            // dismiss progress HUD
-            SVProgressHUD.dismiss()
-            self.searchView.isHidden = false
         }
     }
     
@@ -68,11 +74,13 @@ class ViewController: UIViewController {
         SVProgressHUD.show()
         guard let login : String = searchTextField.text?.trim(), isValid(str: login) else {
             SVProgressHUD.dismiss()
-            showAlert(title: "No Login", msg: "Login can't be empty")
+            showAlert(title: "No Login", msg: "Login can't be empty", alertType: .LoginEmpty)
             return }
         let parameters: Parameters = ["access_token": access_token]
+        searchView.isHidden = true
         Alamofire.request("\(API_URL)users/\(login)", method: .get, parameters: parameters).responseJSON { response in
-            
+            SVProgressHUD.dismiss()
+            self.searchView.isHidden = false
             if ((response.result.value) != nil) {
                 let student = Student()
                 
@@ -162,23 +170,34 @@ class ViewController: UIViewController {
                 
                 self.studentInfo = student
                 
-                SVProgressHUD.dismiss()
                 self.searchTextField.text = ""
                 self.performSegue(withIdentifier: "studentInfo", sender: self)
             }else {
-                print("ERROR")
+                self.showAlert(title: "Search Error", msg: "Unable to complete your request", alertType: .LoginEmpty)
             }
             
         }
 
     }
     
-    func showAlert(title: String, msg: String) {
+    func showAlert(title: String, msg: String, alertType: AlertType) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
-            (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
+        if case alertType = AlertType.LoginEmpty {
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+        } else if case alertType = AlertType.TokenError {
+            alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                self.getToken()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: {
+                (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+        }
         
         self.present(alert, animated: true, completion: nil)
     }
