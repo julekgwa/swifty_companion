@@ -41,6 +41,9 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         skillLabel.backgroundColor = UIColor.flatSand()
         projectLabel.backgroundColor = UIColor.flatSand()
         
+        // hide collection view if there's no info to display
+        hideObject()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +52,15 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func hideObject() {
+        if studentArray[0].cursus_users[0].skills.count == 0 {
+            skillsView.isHidden = true
+            noSkillsLabel.isHidden = false
+        }
         
+        if studentArray[0].projects_users.count == 0 {
+            projectView.isHidden = true
+            noProjectsLabel.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,6 +110,7 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
                 view.projectProgress.setProgress(0.0, animated: true)
                 let percentage = level.truncatingRemainder(dividingBy: 1)
                 view.projectProgress.setProgress(Float(percentage), animated: true)
+                
                 view.projectProgress.progress = Float(percentage)
             }
             return view
