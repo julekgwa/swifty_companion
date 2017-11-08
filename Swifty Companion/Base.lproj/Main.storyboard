@@ -113,13 +113,18 @@
                             <constraint firstAttribute="trailing" secondItem="zs4-2t-UFn" secondAttribute="trailing" id="qZ5-tA-5WC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Failed" image="failed" id="8Va-e1-sx1"/>
+                    <tabBarItem key="tabBarItem" title="Failed" image="failed" id="8Va-e1-sx1" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="m8S-Tb-vte" id="Hw9-GQ-YoU"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="failedTableView" destination="zs4-2t-UFn" id="cZN-9b-NPR"/>
                         <outlet property="noProjects" destination="YQK-Tp-L4b" id="SHQ-Hg-szR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2N-CF-nxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="m8S-Tb-vte" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="3320.8000000000002" y="-809.14542728635683"/>
         </scene>
@@ -163,13 +168,18 @@
                             <constraint firstItem="gMw-33-qE2" firstAttribute="top" secondItem="4ac-01-ZWE" secondAttribute="bottom" constant="-64" id="uln-Wl-bnR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="In Progress" image="progress" id="k07-Vv-Iib"/>
+                    <tabBarItem key="tabBarItem" title="In Progress" image="progress" id="k07-Vv-Iib" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="zg5-yH-zKp" id="3QY-Y1-rrw"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="inProgressTableView" destination="gMw-33-qE2" id="H2u-Qo-Feg"/>
                         <outlet property="noProjects" destination="bbw-jR-OjV" id="G0k-br-0UT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd4-Ff-Vmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="zg5-yH-zKp" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="1456.8" y="-110.19490254872565"/>
         </scene>
@@ -360,7 +370,11 @@
                             <constraint firstItem="Mqr-6C-DlL" firstAttribute="leading" secondItem="Fhl-3W-gvS" secondAttribute="leading" id="hvc-hS-T5L"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="profile" id="eUF-b9-RpU"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="profile" id="eUF-b9-RpU" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="1d3-QK-rtz" id="Jyl-vv-Jag"/>
+                        </connections>
+                    </tabBarItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -376,6 +390,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNL-fX-GyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="1d3-QK-rtz" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="2336.8000000000002" y="-231.18440779610197"/>
         </scene>
@@ -415,20 +430,25 @@
                             <constraint firstAttribute="trailing" secondItem="XgU-LV-Y7l" secondAttribute="trailing" id="tHF-eE-7uq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Passed" image="passed" id="uWi-cv-RgO"/>
+                    <tabBarItem key="tabBarItem" title="Passed" image="passed" id="uWi-cv-RgO" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="jCX-UF-S8Z" id="Ilp-rg-7zZ"/>
+                        </connections>
+                    </tabBarItem>
                     <connections>
                         <outlet property="noProjects" destination="ZCt-zU-uh5" id="oPh-6g-CL7"/>
                         <outlet property="passedTableView" destination="XgU-LV-Y7l" id="tTW-wb-NTO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ2-t9-fOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="jCX-UF-S8Z" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="2336.8000000000002" y="-1560.2698650674663"/>
         </scene>
-        <!--My Tab View Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="8Rt-PZ-PII">
             <objects>
-                <tabBarController id="Meb-zq-5kl" customClass="MyTabViewController" customModule="Swifty_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Meb-zq-5kl" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="saP-I7-t3X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -449,7 +469,7 @@
         <scene sceneID="Evs-QA-35k">
             <objects>
                 <navigationController id="YY0-RB-6n6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fJw-9a-amB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJw-9a-amB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.9142320156" green="0.93277895450000003" blue="0.93725860120000004" alpha="1" colorSpace="calibratedRGB"/>

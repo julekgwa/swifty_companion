@@ -12,5 +12,6 @@ target 'Swifty Companion' do
   pod 'GradientProgressBar', '~> 1.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'ChameleonFramework'
+  pod 'RAMAnimatedTabBarController', "~> 2.0.13"
 
 end
