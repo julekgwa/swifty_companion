@@ -33,7 +33,6 @@
 		8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0351FAAAC6600DC3490 /* Cursus.swift */; };
 		8CD78AA01FAD652A00E9231F /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78A9E1FAD652A00E9231F /* ProfileViewCell.swift */; };
 		8CD78AA11FAD652A00E9231F /* ProfileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD78A9F1FAD652A00E9231F /* ProfileViewCell.xib */; };
-		8CD78AA31FAD694400E9231F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA21FAD694400E9231F /* InfoViewController.swift */; };
 		8CD78AA61FAD865F00E9231F /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA41FAD865F00E9231F /* SkillCollectionViewCell.swift */; };
 		8CD78AA71FAD865F00E9231F /* SkillCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD78AA51FAD865F00E9231F /* SkillCollectionViewCell.xib */; };
 		8CD78AAA1FAD8A5700E9231F /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA81FAD8A5700E9231F /* ProjectCollectionViewCell.swift */; };
@@ -73,7 +72,6 @@
 		8CCBE0351FAAAC6600DC3490 /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		8CD78A9E1FAD652A00E9231F /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		8CD78A9F1FAD652A00E9231F /* ProfileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewCell.xib; sourceTree = "<group>"; };
-		8CD78AA21FAD694400E9231F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8CD78AA41FAD865F00E9231F /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CD78AA51FAD865F00E9231F /* SkillCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillCollectionViewCell.xib; sourceTree = "<group>"; };
 		8CD78AA81FAD8A5700E9231F /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				8CCBE0371FAAC17100DC3490 /* CustomCell */,
 				8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */,
 				8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */,
-				8CD78AA21FAD694400E9231F /* InfoViewController.swift */,
 				8CDC87EE1FAE46ED00806EA2 /* StudentInfoViewController.swift */,
 				8CDC87F01FAE4D7200806EA2 /* MyTabViewController.swift */,
 				8C6274491FB0506C00EB072D /* FailedViewController.swift */,
@@ -373,7 +370,6 @@
 				8CD78AAA1FAD8A5700E9231F /* ProjectCollectionViewCell.swift in Sources */,
 				8CCBE02E1FAAA9E900DC3490 /* Language.swift in Sources */,
 				8CCBE0221FAAA91300DC3490 /* ExpertisesUser.swift in Sources */,
-				8CD78AA31FAD694400E9231F /* InfoViewController.swift in Sources */,
 				8CCBE0261FAAA95A00DC3490 /* Skills.swift in Sources */,
 				8CDC87F11FAE4D7200806EA2 /* MyTabViewController.swift in Sources */,
 				8C6274531FB0734F00EB072D /* ProjectsTableViewCell.swift in Sources */,

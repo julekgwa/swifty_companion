@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import ChameleonFramework
 
 class StudentInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -72,8 +74,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.name.text = "\(studentArray[indexPath.row].first_name) \(studentArray[indexPath.row].last_name.uppercased())"
         cell.username.text = "@\(studentArray[indexPath.row].login)"
-        cell.email.text = studentArray[indexPath.row].email
-        cell.wallet.text = "Wallet: \(studentArray[indexPath.row].wallet)"
+        cell.skillsCount.text = String(studentArray[indexPath.row].cursus_users[0].skills.count)
+        cell.projectsCount.text = String(studentArray[indexPath.row].projects_users.count)
+        let email = studentArray[indexPath.row].email
+        cell.wallet.text = "\(studentArray[indexPath.row].wallet)"
         let level : Double = studentArray[indexPath.row].cursus_users[indexPath.row].level
         cell.progress.setProgress(0.0, animated: true)
         let percentage = level.truncatingRemainder(dividingBy: 1)
@@ -85,7 +89,7 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         cell.profilePic.layer.cornerRadius = cell.profilePic.frame.size.width / 2
         cell.profilePic.clipsToBounds = true
 //        cell.backgroundColor = UIColor.flatWatermelon()
-        cell.campus.text = "\(studentArray[indexPath.row].campus[0].name)"
+        cell.campus.text = "\(studentArray[indexPath.row].campus[0].name), \(email)"
         return cell
         
     }

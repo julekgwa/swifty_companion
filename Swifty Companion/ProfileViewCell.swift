@@ -11,12 +11,13 @@ import GradientProgressBar
 
 class ProfileViewCell: UITableViewCell {
 
+    @IBOutlet weak var projectsCount: UILabel!
+    @IBOutlet weak var skillsCount: UILabel!
     @IBOutlet weak var correctionPoints: UILabel!
     @IBOutlet weak var progress: GradientProgressBar!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var campus: UILabel!
     @IBOutlet weak var wallet: UILabel!
-    @IBOutlet weak var email: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
