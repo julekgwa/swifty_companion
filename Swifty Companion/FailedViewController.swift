@@ -27,6 +27,15 @@ class FailedViewController: UIViewController, UITableViewDataSource, UITableView
             noProjects.isHidden = false
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatRed()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        // bottom tab bar
+        self.tabBarController?.tabBar.tintColor = UIColor.flatRed()
+        self.tabBarController?.tabBar.barTintColor = UIColor.white
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,6 +51,7 @@ class FailedViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "projectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
         cell.projectName.text = failed_projects[indexPath.row].project?.name
         cell.marks.text = String(failed_projects[indexPath.row].final_mark)
+        cell.backgroundColor = UIColor.flatRed()
         return cell
     }
     

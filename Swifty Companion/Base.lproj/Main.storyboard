@@ -137,7 +137,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-33-qE2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.78169107439999996" green="0.24895396829999999" blue="0.019922761250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="4ci-75-uUH" id="9Su-ce-BUg"/>
@@ -151,7 +151,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.78169107439999996" green="0.24895396829999999" blue="0.019922761250000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bbw-jR-OjV" firstAttribute="top" secondItem="4ac-01-ZWE" secondAttribute="bottom" constant="259" id="65v-Pe-vp9"/>
                             <constraint firstItem="vbE-mO-ehQ" firstAttribute="top" secondItem="bbw-jR-OjV" secondAttribute="bottom" constant="274" id="A0V-Ys-v9H"/>
@@ -452,6 +452,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fJw-9a-amB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.9142320156" green="0.93277895450000003" blue="0.93725860120000004" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tmv-jT-CF5"/>

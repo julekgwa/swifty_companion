@@ -66,6 +66,15 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMint()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        // bottom tab bar
+        self.tabBarController?.tabBar.tintColor = UIColor.flatMint()
+        self.tabBarController?.tabBar.barTintColor = UIColor.white
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentArray.count
     }
