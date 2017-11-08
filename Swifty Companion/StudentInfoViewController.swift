@@ -12,6 +12,8 @@ import ChameleonFramework
 
 class StudentInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var projectsCountLabel: UILabel!
+    @IBOutlet weak var skillCountLabel: UILabel!
     @IBOutlet weak var skillsView: UICollectionView!
     @IBOutlet weak var noSkillsLabel: UILabel!
     
@@ -73,8 +75,12 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.name.text = "\(studentArray[indexPath.row].first_name) \(studentArray[indexPath.row].last_name.uppercased())"
         cell.username.text = "@\(studentArray[indexPath.row].login)"
-        cell.skillsCount.text = String(studentArray[indexPath.row].cursus_users[0].skills.count)
-        cell.projectsCount.text = String(studentArray[indexPath.row].projects_users.count)
+        let skillCount = String(studentArray[indexPath.row].cursus_users[0].skills.count)
+        let projectCount = String(studentArray[indexPath.row].projects_users.count)
+        cell.skillsCount.text = skillCount
+        cell.projectsCount.text = projectCount
+        skillCountLabel.text = "\(skillCount) SKILLS"
+        projectsCountLabel.text = "\(projectCount) PROJECTS"
         let email = studentArray[indexPath.row].email
         cell.wallet.text = "\(studentArray[indexPath.row].wallet)"
         let level : Double = studentArray[indexPath.row].cursus_users[indexPath.row].level
