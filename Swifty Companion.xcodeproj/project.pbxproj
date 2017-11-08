@@ -33,7 +33,6 @@
 		8CCBE0361FAAAC6600DC3490 /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBE0351FAAAC6600DC3490 /* Cursus.swift */; };
 		8CD78AA01FAD652A00E9231F /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78A9E1FAD652A00E9231F /* ProfileViewCell.swift */; };
 		8CD78AA11FAD652A00E9231F /* ProfileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD78A9F1FAD652A00E9231F /* ProfileViewCell.xib */; };
-		8CD78AA31FAD694400E9231F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA21FAD694400E9231F /* InfoViewController.swift */; };
 		8CD78AA61FAD865F00E9231F /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA41FAD865F00E9231F /* SkillCollectionViewCell.swift */; };
 		8CD78AA71FAD865F00E9231F /* SkillCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD78AA51FAD865F00E9231F /* SkillCollectionViewCell.xib */; };
 		8CD78AAA1FAD8A5700E9231F /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD78AA81FAD8A5700E9231F /* ProjectCollectionViewCell.swift */; };
@@ -46,6 +45,8 @@
 /* Begin PBXFileReference section */
 		135A29E84E05931965D4ED13 /* Pods_Swifty_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7B0C4F60BDD7E9AEE5CA26 /* Pods-Swifty Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.release.xcconfig"; sourceTree = "<group>"; };
+		8C491ACE1FB3589600272311 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		8C491ACF1FB3589600272311 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
 		8C6274491FB0506C00EB072D /* FailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedViewController.swift; sourceTree = "<group>"; };
 		8C62744B1FB0507F00EB072D /* PassedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassedViewController.swift; sourceTree = "<group>"; };
 		8C62744D1FB0508F00EB072D /* InProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InProgressViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		8CCBE0351FAAAC6600DC3490 /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		8CD78A9E1FAD652A00E9231F /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		8CD78A9F1FAD652A00E9231F /* ProfileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewCell.xib; sourceTree = "<group>"; };
-		8CD78AA21FAD694400E9231F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8CD78AA41FAD865F00E9231F /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CD78AA51FAD865F00E9231F /* SkillCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillCollectionViewCell.xib; sourceTree = "<group>"; };
 		8CD78AA81FAD8A5700E9231F /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +105,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C491AD01FB3589F00272311 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8C491ACF1FB3589600272311 /* AvenirNextLTPro-Regular.otf */,
+				8C491ACE1FB3589600272311 /* AvenirNextLTPro-It.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		8C7F7BBC1FA8F23800A423B7 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +135,7 @@
 		8C7F7BC71FA8F23800A423B7 /* Swifty Companion */ = {
 			isa = PBXGroup;
 			children = (
+				8C491AD01FB3589F00272311 /* Fonts */,
 				8CCBE0161FAAA7DA00DC3490 /* Model */,
 				8CCBE0141FAAA76900DC3490 /* Controller */,
 				8CCBE0151FAAA7CA00DC3490 /* View */,
@@ -143,7 +153,6 @@
 				8CCBE0371FAAC17100DC3490 /* CustomCell */,
 				8C7F7BC81FA8F23800A423B7 /* AppDelegate.swift */,
 				8C7F7BCA1FA8F23800A423B7 /* ViewController.swift */,
-				8CD78AA21FAD694400E9231F /* InfoViewController.swift */,
 				8CDC87EE1FAE46ED00806EA2 /* StudentInfoViewController.swift */,
 				8CDC87F01FAE4D7200806EA2 /* MyTabViewController.swift */,
 				8C6274491FB0506C00EB072D /* FailedViewController.swift */,
@@ -373,7 +382,6 @@
 				8CD78AAA1FAD8A5700E9231F /* ProjectCollectionViewCell.swift in Sources */,
 				8CCBE02E1FAAA9E900DC3490 /* Language.swift in Sources */,
 				8CCBE0221FAAA91300DC3490 /* ExpertisesUser.swift in Sources */,
-				8CD78AA31FAD694400E9231F /* InfoViewController.swift in Sources */,
 				8CCBE0261FAAA95A00DC3490 /* Skills.swift in Sources */,
 				8CDC87F11FAE4D7200806EA2 /* MyTabViewController.swift in Sources */,
 				8C6274531FB0734F00EB072D /* ProjectsTableViewCell.swift in Sources */,

@@ -21,36 +21,41 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxf-RU-2ZG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network &amp; system administratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lph-59-Q7q">
-                                <rect key="frame" x="0.0" y="3" width="252" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network &amp; system administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lph-59-Q7q">
+                                <rect key="frame" x="8" y="3" width="244" height="23.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vha-hZ-Ik0" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                <rect key="frame" x="0.0" y="28" width="320" height="2"/>
+                                <rect key="frame" x="8" y="30.5" width="312" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-bZ-MSb">
-                                <rect key="frame" x="264" y="8" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="272" y="8" width="44" height="23.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lph-59-Q7q" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" id="0Ah-Zx-iFh"/>
+                            <constraint firstItem="lph-59-Q7q" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" constant="8" id="0Ah-Zx-iFh"/>
                             <constraint firstItem="lph-59-Q7q" firstAttribute="leading" secondItem="Vha-hZ-Ik0" secondAttribute="leading" id="H9j-XY-6IZ"/>
                             <constraint firstItem="lph-59-Q7q" firstAttribute="trailing" secondItem="Vha-hZ-Ik0" secondAttribute="trailing" constant="-68" id="dG9-ay-j1B"/>
                             <constraint firstItem="Vha-hZ-Ik0" firstAttribute="top" secondItem="lph-59-Q7q" secondAttribute="bottom" constant="4" id="flS-MU-fDA"/>
                             <constraint firstAttribute="trailing" secondItem="PTE-bZ-MSb" secondAttribute="trailing" constant="4" id="jmv-eY-tH5"/>
                             <constraint firstAttribute="trailing" secondItem="Vha-hZ-Ik0" secondAttribute="trailing" id="m1L-Vw-Qwa"/>
-                            <constraint firstItem="Vha-hZ-Ik0" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" id="qMi-17-Mmb"/>
+                            <constraint firstItem="Vha-hZ-Ik0" firstAttribute="leading" secondItem="nxf-RU-2ZG" secondAttribute="leading" constant="8" id="qMi-17-Mmb"/>
                             <constraint firstItem="PTE-bZ-MSb" firstAttribute="bottom" secondItem="Vha-hZ-Ik0" secondAttribute="bottom" constant="-1" id="qZ8-ir-dXK"/>
                             <constraint firstItem="lph-59-Q7q" firstAttribute="top" secondItem="nxf-RU-2ZG" secondAttribute="top" constant="3" id="vpY-XA-EwH"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="nxf-RU-2ZG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YFk-Wg-muu"/>
                 <constraint firstItem="nxf-RU-2ZG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yy1-wJ-H3k"/>

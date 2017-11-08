@@ -22,27 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network &amp; system administration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mta-mC-4g6">
-                                <rect key="frame" x="0.0" y="15" width="253" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="8" y="15" width="253" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="mta-mC-4g6" firstAttribute="top" secondItem="j2V-zc-Czm" secondAttribute="top" constant="15" id="Lf7-EP-cmb"/>
-                            <constraint firstItem="mta-mC-4g6" firstAttribute="leading" secondItem="j2V-zc-Czm" secondAttribute="leading" id="Swi-et-2G0"/>
+                            <constraint firstItem="mta-mC-4g6" firstAttribute="leading" secondItem="j2V-zc-Czm" secondAttribute="leading" constant="8" id="Swi-et-2G0"/>
                             <constraint firstAttribute="bottom" secondItem="mta-mC-4g6" secondAttribute="bottom" constant="14" id="TNn-tX-ibs"/>
-                            <constraint firstAttribute="trailing" secondItem="mta-mC-4g6" secondAttribute="trailing" constant="67" id="nQd-yz-uag"/>
+                            <constraint firstAttribute="trailing" secondItem="mta-mC-4g6" secondAttribute="trailing" constant="59" id="nQd-yz-uag"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕙" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnR-gL-Dlm">
                         <rect key="frame" x="278" y="15" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="j2V-zc-Czm" secondAttribute="trailing" id="0as-YO-hfl"/>
                 <constraint firstAttribute="bottom" secondItem="j2V-zc-Czm" secondAttribute="bottom" id="BPn-EB-MHr"/>

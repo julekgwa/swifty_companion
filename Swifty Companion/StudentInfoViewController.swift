@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
+import ChameleonFramework
 
 class StudentInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var projectsCountLabel: UILabel!
+    @IBOutlet weak var skillCountLabel: UILabel!
     @IBOutlet weak var skillsView: UICollectionView!
     @IBOutlet weak var noSkillsLabel: UILabel!
     
@@ -35,11 +39,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         skillsView.register(skills, forCellWithReuseIdentifier: "skills")
         projectView.register(project, forCellWithReuseIdentifier: "projects")
         tableView.register(table, forCellReuseIdentifier: "profile")
-//        tableView.backgroundColor = UIColor.flatWatermelon()
-//        skillsView.backgroundColor = UIColor.flatLime()
-//        projectView.backgroundColor = UIColor.flatLime()
-//        skillLabel.backgroundColor = UIColor.flatSand()
-//        projectLabel.backgroundColor = UIColor.flatSand()
+        
+        // change background colors
+//        skillsView.backgroundColor = UIColor.flatWhite()
+//        projectView.backgroundColor = UIColor.flatWhite()
         
         // hide collection view if there's no info to display
         hideObject()
@@ -63,6 +66,15 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMint()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        // bottom tab bar
+        self.tabBarController?.tabBar.tintColor = UIColor.flatMint()
+        self.tabBarController?.tabBar.barTintColor = UIColor.white
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentArray.count
     }
@@ -72,8 +84,14 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.name.text = "\(studentArray[indexPath.row].first_name) \(studentArray[indexPath.row].last_name.uppercased())"
         cell.username.text = "@\(studentArray[indexPath.row].login)"
-        cell.email.text = studentArray[indexPath.row].email
-        cell.wallet.text = "Wallet: \(studentArray[indexPath.row].wallet)"
+        let skillCount = String(studentArray[indexPath.row].cursus_users[0].skills.count)
+        let projectCount = String(studentArray[indexPath.row].projects_users.count)
+        cell.skillsCount.text = skillCount
+        cell.projectsCount.text = projectCount
+        skillCountLabel.text = "\(skillCount) SKILLS"
+        projectsCountLabel.text = "\(projectCount) PROJECTS"
+        let email = studentArray[indexPath.row].email
+        cell.wallet.text = "\(studentArray[indexPath.row].wallet)"
         let level : Double = studentArray[indexPath.row].cursus_users[indexPath.row].level
         cell.progress.setProgress(0.0, animated: true)
         let percentage = level.truncatingRemainder(dividingBy: 1)
@@ -81,11 +99,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         cell.progress.progress = Float(percentage)
         cell.level.text = "Level: \(level)"
         cell.correctionPoints.text = "Correction Points: \(studentArray[indexPath.row].correction_point)"
-        cell.profilePic.sd_setImage(with: URL(string: studentArray[indexPath.row].image_url), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.profilePic.sd_setImage(with: URL(string: studentArray[indexPath.row].image_url), placeholderImage: UIImage(named: "medium_default.png"))
         cell.profilePic.layer.cornerRadius = cell.profilePic.frame.size.width / 2
         cell.profilePic.clipsToBounds = true
-//        cell.backgroundColor = UIColor.flatWatermelon()
-        cell.campus.text = "\(studentArray[indexPath.row].campus[0].name)"
+        cell.campus.text = "\(studentArray[indexPath.row].campus[0].name), \(email)"
         return cell
         
     }

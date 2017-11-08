@@ -29,6 +29,15 @@ class PassedViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatGreen()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        // bottom tab bar
+        self.tabBarController?.tabBar.tintColor = UIColor.flatGreen()
+        self.tabBarController?.tabBar.barTintColor = UIColor.white
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +52,7 @@ class PassedViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "projectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
         cell.projectName.text = validated_projects[indexPath.row].project?.name
         cell.marks.text = String(validated_projects[indexPath.row].final_mark)
+        cell.backgroundColor = UIColor.flatGreen()
         return cell
     }
 
