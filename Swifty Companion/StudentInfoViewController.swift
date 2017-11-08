@@ -37,11 +37,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         skillsView.register(skills, forCellWithReuseIdentifier: "skills")
         projectView.register(project, forCellWithReuseIdentifier: "projects")
         tableView.register(table, forCellReuseIdentifier: "profile")
-//        tableView.backgroundColor = UIColor.flatWatermelon()
-//        skillsView.backgroundColor = UIColor.flatLime()
-//        projectView.backgroundColor = UIColor.flatLime()
-//        skillLabel.backgroundColor = UIColor.flatSand()
-//        projectLabel.backgroundColor = UIColor.flatSand()
+        
+        // change background colors
+//        skillsView.backgroundColor = UIColor.flatWhite()
+//        projectView.backgroundColor = UIColor.flatWhite()
         
         // hide collection view if there's no info to display
         hideObject()
@@ -85,10 +84,9 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         cell.progress.progress = Float(percentage)
         cell.level.text = "Level: \(level)"
         cell.correctionPoints.text = "Correction Points: \(studentArray[indexPath.row].correction_point)"
-        cell.profilePic.sd_setImage(with: URL(string: studentArray[indexPath.row].image_url), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.profilePic.sd_setImage(with: URL(string: studentArray[indexPath.row].image_url), placeholderImage: UIImage(named: "medium_default.png"))
         cell.profilePic.layer.cornerRadius = cell.profilePic.frame.size.width / 2
         cell.profilePic.clipsToBounds = true
-//        cell.backgroundColor = UIColor.flatWatermelon()
         cell.campus.text = "\(studentArray[indexPath.row].campus[0].name), \(email)"
         return cell
         

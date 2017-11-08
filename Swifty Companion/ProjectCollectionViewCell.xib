@@ -43,6 +43,7 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="j2V-zc-Czm" secondAttribute="trailing" id="0as-YO-hfl"/>
                 <constraint firstAttribute="bottom" secondItem="j2V-zc-Czm" secondAttribute="bottom" id="BPn-EB-MHr"/>
