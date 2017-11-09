@@ -23,6 +23,7 @@ class InProgressViewController: UIViewController, UITableViewDataSource, UITable
         let table = UINib(nibName: "ProjectsTableViewCell", bundle: nil)
         inProgressTableView.register(table, forCellReuseIdentifier: "projectsTableViewCell")
         
+        // check if there are projects in progress
         if showLabel {
             inProgressTableView.isHidden = true
             noProjects.isHidden = false
@@ -30,11 +31,11 @@ class InProgressViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatOrangeColorDark()
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatYellowColorDark()
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
         // bottom tab bar
-        self.tabBarController?.tabBar.tintColor = UIColor.flatOrangeColorDark()
+        self.tabBarController?.tabBar.tintColor = UIColor.flatYellowColorDark()
         self.tabBarController?.tabBar.barTintColor = UIColor.white
     }
     
@@ -51,7 +52,7 @@ class InProgressViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "projectsTableViewCell", for: indexPath) as! ProjectsTableViewCell
         cell.projectName.text = in_progress[indexPath.row].project?.name
-        cell.backgroundColor = UIColor.flatOrangeColorDark()
+        cell.backgroundColor = UIColor.flatYellowColorDark()
         cell.marks.text = String("🕙")
         return cell
     }
