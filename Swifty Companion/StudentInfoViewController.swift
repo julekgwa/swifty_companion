@@ -40,14 +40,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         projectView.register(project, forCellWithReuseIdentifier: "projects")
         tableView.register(table, forCellReuseIdentifier: "profile")
         
-        // change background colors
-//        skillsView.backgroundColor = UIColor.flatWhite()
-//        projectView.backgroundColor = UIColor.flatWhite()
-        
         // hide collection view if there's no info to display
         hideObject()
-        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,8 +63,10 @@ class StudentInfoViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor.flatMint()
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
         
         // bottom tab bar
         self.tabBarController?.tabBar.tintColor = UIColor.flatMint()
