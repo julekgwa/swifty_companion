@@ -15,6 +15,7 @@ class ProfileViewCell: UITableViewCell {
     @IBOutlet weak var skillsCount: UILabel!
     @IBOutlet weak var correctionPoints: UILabel!
     @IBOutlet weak var progress: GradientProgressBar!
+    //    @IBOutlet weak var progress: GradientProgressBar!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var campus: UILabel!
     @IBOutlet weak var wallet: UILabel!
